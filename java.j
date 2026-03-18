@@ -61,3 +61,190 @@ class Numbers
         }
     }
 }
+#seventh program 
+import java.util.Scanner;
+
+public class PalindromeNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        int original = num, reverse = 0;
+
+        while(num != 0) {
+            int digit = num % 10;
+            reverse = reverse * 10 + digit;
+            num /= 10;
+        }
+
+        if(original == reverse)
+            System.out.println("Palindrome number");
+        else
+            System.out.println("Not a palindrome");
+    }
+}
+#eighth program
+import java.util.Scanner;
+
+public class VowelCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine().toLowerCase();
+
+        int vowels = 0, consonants = 0;
+
+        for(int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            if(Character.isLetter(ch)) {
+                if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+                    vowels++;
+                else
+                    consonants++;
+            }
+        }
+
+        System.out.println("Vowels: " + vowels);
+        System.out.println("Consonants: " + consonants);
+    }
+}
+#ninth program
+import java.util.Scanner;
+
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a[][] = new int[10][10];
+        int b[][] = new int[10][10];
+        int result[][] = new int[10][10];
+
+        int r1, c1, r2, c2;
+
+        System.out.print("Enter rows and cols of matrix A: ");
+        r1 = sc.nextInt();
+        c1 = sc.nextInt();
+
+        System.out.print("Enter rows and cols of matrix B: ");
+        r2 = sc.nextInt();
+        c2 = sc.nextInt();
+
+        if(c1 != r2) {
+            System.out.println("Multiplication not possible");
+            return;
+        }
+
+        System.out.println("Enter Matrix A:");
+        for(int i=0;i<r1;i++)
+            for(int j=0;j<c1;j++)
+                a[i][j] = sc.nextInt();
+
+        System.out.println("Enter Matrix B:");
+        for(int i=0;i<r2;i++)
+            for(int j=0;j<c2;j++)
+                b[i][j] = sc.nextInt();
+
+        for(int i=0;i<r1;i++) {
+            for(int j=0;j<c2;j++) {
+                result[i][j] = 0;
+                for(int k=0;k<c1;k++) {
+                    result[i][j] += a[i][k] * b[k][j];
+                }
+            }
+        }
+
+        System.out.println("Result Matrix:");
+        for(int i=0;i<r1;i++) {
+            for(int j=0;j<c2;j++)
+                System.out.print(result[i][j] + " ");
+            System.out.println();
+        }
+    }
+}
+#tenth program
+class Student {
+    int id;
+    String name;
+    double marks;
+
+    void setData(int i, String n, double m) {
+        id = i;
+        name = n;
+        marks = m;
+    }
+
+    void display() {
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Marks: " + marks);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.setData(1, "Lish", 88.5);
+
+        Student s2 = new Student();
+        s2.setData(2, "Kushal", 92.0);
+
+        s1.display();
+        s2.display();
+    }
+}
+#eleventh program
+import java.util.Scanner;
+
+class BankAccount {
+    double balance = 0;
+
+    void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount);
+    }
+
+    void withdraw(double amount) {
+        if(amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
+
+    void displayBalance() {
+        System.out.println("Current Balance: " + balance);
+    }
+}
+
+public class BankApp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BankAccount acc = new BankAccount();
+
+        int choice;
+
+        do {
+            System.out.println("\n1. Deposit\n2. Withdraw\n3. Balance\n4. Exit");
+            System.out.print("Enter choice: ");
+            choice = sc.nextInt();
+
+            switch(choice) {
+                case 1:
+                    System.out.print("Enter amount: ");
+                    acc.deposit(sc.nextDouble());
+                    break;
+                case 2:
+                    System.out.print("Enter amount: ");
+                    acc.withdraw(sc.nextDouble());
+                    break;
+                case 3:
+                    acc.displayBalance();
+                    break;
+            }
+        } while(choice != 4);
+    }
+}
