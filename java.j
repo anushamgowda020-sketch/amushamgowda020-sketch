@@ -248,3 +248,87 @@ public class BankApp {
         } while(choice != 4);
     }
 }
+#12th program
+import java.util.Scanner;
+
+class Prime {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        boolean isPrime = true;
+
+        for(int i = 2; i <= n/2; i++) {
+            if(n % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        System.out.println(isPrime ? "Prime" : "Not Prime");
+    }
+}
+#13th program 
+import java.util.Scanner;
+
+class Fact {
+    static int fact(int n) {
+        if(n == 0) return 1;
+        return n * fact(n - 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(fact(n));
+    }
+}
+#14th program 
+import java.util.Scanner;
+
+class ReverseStr {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+
+        String rev = new StringBuilder(s).reverse().toString();
+        System.out.println(rev);
+    }
+}
+#15th program 
+import java.util.Scanner;
+
+class Largest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        for(int i=0;i<n;i++)
+            arr[i] = sc.nextInt();
+
+        int max = arr[0];
+        for(int i=1;i<n;i++) {
+            if(arr[i] > max)
+                max = arr[i];
+        }
+
+        System.out.println("Largest: " + max);
+    }
+}
+#16th program 
+import java.util.Scanner;
+
+class CountDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int count = 0;
+
+        while(n != 0) {
+            n /= 10;
+            count++;
+        }
+
+        System.out.println("Digits: " + count);
+    }
+}
