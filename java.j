@@ -332,3 +332,115 @@ class CountDigits {
         System.out.println("Digits: " + count);
     }
 }
+#17th program 
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        String str, rev = "";
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter string: ");
+        str = sc.nextLine();
+
+        for(int i = str.length()-1; i >= 0; i--)
+            rev += str.charAt(i);
+
+        System.out.println("Reversed: " + rev);
+    }
+}
+#18th program
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        String str;
+        int v = 0, c = 0;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter string: ");
+        str = sc.nextLine();
+
+        for(int i = 0; i < str.length(); i++) {
+            char ch = Character.toLowerCase(str.charAt(i));
+
+            if(ch >= 'a' && ch <= 'z') {
+                if("aeiou".indexOf(ch) != -1)
+                    v++;
+                else
+                    c++;
+            }
+        }
+
+        System.out.println("Vowels: " + v);
+        System.out.println("Consonants: " + c);
+    }
+}
+#19th program
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        int arr[] = new int[5];
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter elements:");
+        for(int i=0;i<5;i++)
+            arr[i] = sc.nextInt();
+
+        for(int i=0;i<5;i++) {
+            for(int j=0;j<4;j++) {
+                if(arr[j] > arr[j+1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+
+        System.out.println("Sorted array:");
+        for(int i=0;i<5;i++)
+            System.out.print(arr[i] + " ");
+    }
+}
+#20th program
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        int num, i, flag = 1;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number: ");
+        num = sc.nextInt();
+
+        for(i=2;i<=num/2;i++) {
+            if(num % i == 0) {
+                flag = 0;
+                break;
+            }
+        }
+
+        if(flag == 1)
+            System.out.println("Prime");
+        else
+            System.out.println("Not Prime");
+    }
+}
+#21st prograam
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        int arr[] = new int[5], sum = 0;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter elements:");
+        for(int i=0;i<5;i++) {
+            arr[i] = sc.nextInt();
+            sum += arr[i];
+        }
+
+        System.out.println("Sum: " + sum);
+    }
+}
