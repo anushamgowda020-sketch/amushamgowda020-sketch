@@ -444,3 +444,84 @@ class Main {
         System.out.println("Sum: " + sum);
     }
 }
+#22nd program
+import java.util.*;
+
+class Duplicate {
+    public static void main(String[] args) {
+        int arr[] = {1,2,3,2,4,1};
+
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = i+1; j < arr.length; j++) {
+                if(arr[i] == arr[j])
+                    System.out.println(arr[i]);
+            }
+        }
+    }
+}
+#23rd program
+import java.util.Scanner;
+
+class CountDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int count = 0;
+
+        while(num != 0) {
+            num /= 10;
+            count++;
+        }
+
+        System.out.println("Digits: " + count);
+    }
+}
+#24th program
+class Smallest {
+    public static void main(String[] args) {
+        int arr[] = {5,2,8,1,9};
+        int min = arr[0];
+
+        for(int i = 1; i < arr.length; i++) {
+            if(arr[i] < min)
+                min = arr[i];
+        }
+
+        System.out.println("Smallest: " + min);
+    }
+}
+#25th program
+import java.util.Scanner;
+
+class Automorphic {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        int square = num * num;
+
+        if(String.valueOf(square).endsWith(String.valueOf(num)))
+            System.out.println("Automorphic");
+        else
+            System.out.println("Not Automorphic");
+    }
+}
+#26th program
+class BubbleSort {
+    public static void main(String[] args) {
+        int arr[] = {5,3,8,1,2};
+
+        for(int i = 0; i < arr.length-1; i++) {
+            for(int j = 0; j < arr.length-i-1; j++) {
+                if(arr[j] > arr[j+1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+
+        for(int num : arr)
+            System.out.print(num + " ");
+    }
+}
