@@ -525,3 +525,79 @@ class BubbleSort {
             System.out.print(num + " ");
     }
 }
+#27th program
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+
+        String rev = new StringBuilder(str).reverse().toString();
+
+        if(str.equals(rev))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+#28th program
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        float f = sc.nextFloat();
+
+        float c = (5f/9f) * (f - 32);
+        System.out.println("Celsius: " + c);
+    }
+}
+#29th program
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[10];
+        int count = 0;
+
+        for(int i=0;i<10;i++)
+            arr[i] = sc.nextInt();
+
+        for(int i=0;i<10;i++) {
+            if(arr[i] == 2)
+                count++;
+        }
+
+        System.out.println("2 appears " + count + " times");
+    }
+}
+#30th program
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        char ch = sc.next().charAt(0);
+
+        String result = str.replace(String.valueOf(ch), "");
+        System.out.println(result);
+    }
+}
+#31st program
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] words = sc.nextLine().split(" ");
+        int k = sc.nextInt();
+
+        for(String word : words) {
+            if(word.length() > k)
+                System.out.println(word);
+        }
+    }
+}
