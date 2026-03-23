@@ -601,3 +601,39 @@ public class Main {
         }
     }
 }
+#32nd program
+import java.util.Scanner;
+
+public class GSTCalculation {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter original amount: ");
+        double amount = sc.nextDouble();
+
+        System.out.print("Enter GST rate (%): ");
+        double gstRate = sc.nextDouble();
+
+        double gst = (amount * gstRate) / 100;
+        double total = amount + gst;
+
+        System.out.println("GST Amount: " + gst);
+        System.out.println("Total Amount: " + total);
+    }
+}
+#33rd program
+import java.util.Scanner;
+
+public class LeapYear {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a year: ");
+        int year = sc.nextInt();
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+            System.out.println("Leap Year");
+        else
+            System.out.println("Not a Leap Year");
+    }
+}
