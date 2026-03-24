@@ -637,3 +637,123 @@ public class LeapYear {
             System.out.println("Not a Leap Year");
     }
 }
+#34th program 
+public class HollowDiamond {
+    public static void main(String[] args) {
+        int n = 5;
+
+        // Upper part
+        for (int i = 1; i <= n; i++) {
+            for (int j = i; j < n; j++) System.out.print(" ");
+
+            for (int j = 1; j <= (2*i - 1); j++) {
+                if (j == 1 || j == (2*i - 1))
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+
+        // Lower part
+        for (int i = n-1; i >= 1; i--) {
+            for (int j = n; j > i; j--) System.out.print(" ");
+
+            for (int j = 1; j <= (2*i - 1); j++) {
+                if (j == 1 || j == (2*i - 1))
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+}
+#35th program
+public class PascalTriangle {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 0; i < n; i++) {
+            int num = 1;
+
+            for (int j = 0; j < n - i; j++)
+                System.out.print(" ");
+
+            for (int j = 0; j <= i; j++) {
+                System.out.print(num + " ");
+                num = num * (i - j) / (j + 1);
+            }
+            System.out.println();
+        }
+    }
+}
+#36th program
+public class SpiralMatrix {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1,2,3,4},
+            {5,6,7,8},
+            {9,10,11,12},
+            {13,14,15,16}
+        };
+
+        int top = 0, bottom = matrix.length - 1;
+        int left = 0, right = matrix[0].length - 1;
+
+        while (top <= bottom && left <= right) {
+
+            for (int i = left; i <= right; i++)
+                System.out.print(matrix[top][i] + " ");
+            top++;
+
+            for (int i = top; i <= bottom; i++)
+                System.out.print(matrix[i][right] + " ");
+            right--;
+
+            for (int i = right; i >= left; i--)
+                System.out.print(matrix[bottom][i] + " ");
+            bottom--;
+
+            for (int i = bottom; i >= top; i--)
+                System.out.print(matrix[i][left] + " ");
+            left++;
+        }
+    }
+}
+#37th program
+import java.util.Arrays;
+
+public class AnagramCheck {
+    public static void main(String[] args) {
+        String s1 = "listen";
+        String s2 = "silent";
+
+        char[] a = s1.toCharArray();
+        char[] b = s2.toCharArray();
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        if (Arrays.equals(a, b))
+            System.out.println("Anagram");
+        else
+            System.out.println("Not Anagram");
+    }
+}
+#38th program
+public class FibonacciRecursion {
+
+    static int fib(int n) {
+        if (n <= 1)
+            return n;
+        return fib(n-1) + fib(n-2);
+    }
+
+    public static void main(String[] args) {
+        int n = 8;
+
+        for (int i = 0; i < n; i++)
+            System.out.print(fib(i) + " ");
+    }
+}
