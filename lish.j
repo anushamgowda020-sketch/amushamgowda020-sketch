@@ -793,3 +793,38 @@ public class Main {
             System.out.print(num + " ");
     }
 }
+#41st program
+public class Main {
+    public static void main(String[] args) {
+        int arr[] = {0, 1, 0, 3, 12};
+        int count = 0;
+
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] != 0) {
+                arr[count++] = arr[i];
+            }
+        }
+
+        while(count < arr.length) {
+            arr[count++] = 0;
+        }
+
+        for(int num : arr)
+            System.out.print(num + " ");
+    }
+}
+#42nd program
+public class Main {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 2, 4, 1};
+
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = i + 1; j < arr.length; j++) {
+                if(arr[i] == arr[j]) {
+                    System.out.println("Duplicate: " + arr[i]);
+                    break;
+                }
+            }
+        }
+    }
+}
