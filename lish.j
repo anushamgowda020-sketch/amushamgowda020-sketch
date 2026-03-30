@@ -520,6 +520,29 @@ class BubbleSort {
                 }
             }
         }
+#27th program
+import java.util.Scanner;
+
+public class NeonNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number: ");
+        int num = sc.nextInt();
+
+        int square = num * num;
+        int sum = 0;
+
+        while (square > 0) {
+            sum += square % 10;
+            square /= 10;
+        }
+
+        if (sum == num)
+            System.out.println("Neon Number");
+        else
+            System.out.println("Not a Neon Number");
+    }
+}
 
         for(int num : arr)
             System.out.print(num + " ");
